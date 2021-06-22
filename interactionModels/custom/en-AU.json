@@ -1,0 +1,289 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "museum of docklands",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "CICTemperature",
+          "slots": [
+            {
+              "name": "floor",
+              "type": "floor",
+              "samples": [
+                "tell me for floor two",
+                "tell me for floor one",
+                "tell me for {floor}",
+                "{floor}"
+              ]
+            }
+          ],
+          "samples": [
+            "status of ahu of {floor}",
+            "status of air holding unit",
+            "staus of air holding unit of {floor}",
+            "air holding unit status of {floor}",
+            "{floor} status",
+            "what is the status of {floor}"
+          ]
+        },
+        {
+          "name": "AlarmStatus",
+          "slots": [
+            {
+              "name": "floor",
+              "type": "floor",
+              "samples": [
+                "tell me for florr {floor}",
+                "florr {floor}",
+                "floor one"
+              ]
+            }
+          ],
+          "samples": [
+            "status of  temperature alarm in {floor}",
+            "{floor} temperature alarm ",
+            "floor one temperature {floor} alarm"
+          ]
+        },
+        {
+          "name": "SystemAwake",
+          "slots": [
+            {
+              "name": "status",
+              "type": "status"
+            },
+            {
+              "name": "system",
+              "type": "system"
+            }
+          ],
+          "samples": [
+            "turn {status} {system}"
+          ]
+        },
+        {
+          "name": "DailyUpdate",
+          "slots": [],
+          "samples": [
+            "what is the daily update ",
+            "daily updates",
+            "daily update of building",
+            "daily update"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "floor 9"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 8"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 7"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 6"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 5"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 4"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 3"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 2"
+              }
+            },
+            {
+              "name": {
+                "value": "floor 1"
+              }
+            }
+          ],
+          "name": "floor"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "fire"
+              }
+            }
+          ],
+          "name": "system"
+        },
+        {
+          "values": [
+            {
+              "id": "3",
+              "name": {
+                "value": "off"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "on"
+              }
+            }
+          ],
+          "name": "status"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CICTemperature",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "floor",
+              "type": "floor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.765412783703.143388430826"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AlarmStatus",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "floor",
+              "type": "floor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.157193824203.14510262942"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SystemAwake",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.910148981461"
+          },
+          "slots": [
+            {
+              "name": "status",
+              "type": "status",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "system",
+              "type": "system",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "DailyUpdate",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.765412783703.143388430826",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "can you please tell me the floor?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is the floor number?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1332966755731",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you really want to proceed?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.910148981461",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you want to proceed?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.157193824203.14510262942",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the floor number?"
+          },
+          {
+            "type": "PlainText",
+            "value": "can you please tell me the floor number?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "33"
+}

@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-AU": {
+          "summary": "Ask me anything about Museum of Docklands",
+          "examplePhrases": [
+            "Alexa ask museum of docklands to daily updates",
+            "Alexa ask museum of docklands to status of air holding unit"
+          ],
+          "keywords": [
+            "museum",
+            "of",
+            "docklands"
+          ],
+          "name": "CIC RMIT",
+          "description": "Skill is used to receive daily updates by engineers and managers",
+          "smallIconUri": "file://assets/images/en-AU_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-AU_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Use wake word \"Museum of docklands\" and utterances like \"daily report\" , \"status  of AHU in floor X\"",
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "AU"
+      ]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:<Region>:<Account id>:function:<function id>:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:<Region>:<Account id>:function:<function id>:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:<Region>:<Account id>:function:<function id>:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:<Region>:<Account id>:function:<function id>:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::authenticate:2:mandatory"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-AU": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
